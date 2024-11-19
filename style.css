@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    height: 100vh;
+    background: #0000ff6e;
+    overflow: hidden;
+}
+.open-modal {
+    padding: 15px 20px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    background: orangered;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50px, -50px);
+}
+.modal {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.inner-modal {
+    position: relative;
+    margin: auto;
+    height: 180px;
+    width: 400px;
+    background: white;
+    top: 40%;
+    transform: translateY(-40%);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: modalhide 0.3s linear;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(255, 30, 0, 0.693);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.modal-body {
+    padding: 10px;
+    color: rgba(255, 30, 0, 0.693);
+    font-size: 22px;
+    font-weight: bold;
+}
+.modal-body .body {
+    color: black;
+    font-size: 15px;
+    margin: 15px 0;
+}
+.modal-footer {
+    text-align: right;
+    padding: 0 15px;
+}
+.footer {
+    padding: 5px 10px;
+    border-radius: 12px;
+    border: none;
+    font-size: 18px;
+    background: rgba(255, 30, 0, 0.693);
+    color: white;
+}
+.hide {
+    display: none;
+}
+@keyframes modalshow {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes modalhide {
+    from {
+        top: 50%;
+        opacity: 1;
+    }
+    to {
+        top: -200px;
+        opacity: 0;
+    }
+}
+@media only screen and (max-width: 1080px) {
+    .open-modal {
+        font-size: 16px;
+        padding: 10px 12px;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+    }
+
+    .inner-modal {
+        width: 90%; /* Modal sẽ chiếm 90% chiều rộng màn hình */
+        height: auto; /* Chiều cao tự động theo nội dung */
+        top: 30%; /* Giảm vị trí top cho phù hợp với màn hình nhỏ */
+        transform: translateY(-30%);
+    }
+
+    .modal-body {
+        font-size: 18px; /* Giảm kích thước font để vừa tầm nhìn */
+    }
+
+    .footer {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .open-modal {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .inner-modal {
+        width: 95%; /* Gần như full màn hình */
+        top: 25%;
+        transform: translateY(-25%);
+    }
+
+    .modal-body {
+        font-size: 16px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
